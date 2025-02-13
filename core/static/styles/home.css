@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.no-content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-size: 2rem;
+}
+
+.note {
+  background: #FFECB3;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  position: relative;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.time {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #6D6D6D;
+  font-size: 11px;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.title {
+  margin: 0 0 12px 0;
+  color: #4A4A4A;
+  font-size: 16px;
+  width: 80%;
+}
+
+.description {
+  margin: 0;
+  color: #5E5E5E;
+  font-size: 14px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

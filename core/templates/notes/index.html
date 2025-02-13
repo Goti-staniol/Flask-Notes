@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Note{% endblock %}
+{% block style_link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/notes-style.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="note-container">
+        <input type="text" class="note-title" placeholder="Название заметки">
+        <textarea class="note-description" placeholder="Детальное описание..."></textarea>
+        <input type="file" id="photo-upload" multiple accept="image/*" style="display: none;">
+        <button class="add-photo-btn" onclick="document.getElementById('photo-upload').click()">📷 Добавить фото</button>
+        <div class="photos-container" id="photos-container"></div>
+    </div>
+    {% block script %}
+        <script src="{{ url_for('static', filename='scripts/notes-style.js') }}"></script>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block nav_link %}
+    <a class="nav-link active" aria-current="page" href="/add-note">New Notes</a>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% if notes %}
+            {% for note in notes %}
+                <div class="note">
+                    <div class="time">
+                        09:15<br>
+                        13.02.2025
+                    </div>
+                    <h2 class="title">Напоминание</h2>
+                    <p class="description">
+                        {{ note.description if note.description else '' }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-content">
+                Нету контента
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
