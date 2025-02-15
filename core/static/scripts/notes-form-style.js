@@ -22,26 +22,3 @@ photoUpload.addEventListener('change', function(event) {
     }
 });
 
-async function saveNote() {
-    const title = document.querySelector('.note-title').value;
-    const description = document.querySelector('.note-description').value;
-
-    const data = {
-        title: title,
-        description: description,
-        photos: uploadedPhotos
-    };
-
-    try {
-        const response = await fetch('/save_note', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-    } catch (error) {
-        console.error('Ошибка:', error);
-        alert('Произошла ошибка при отправке данных');
-    }
-}
