@@ -1,6 +1,6 @@
 const photoUpload = document.getElementById('photo-upload');
 const photosContainer = document.getElementById('photos-container');
-let uploadedPhotos = []; // Массив для хранения данных фотографий
+let uploadedPhotos = [];
 
 photoUpload.addEventListener('change', function(event) {
     const files = event.target.files;
