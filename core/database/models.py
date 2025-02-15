@@ -18,4 +18,5 @@ class Notes(db.Model):
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     title = db.Column(db.String(25), nullable=False)
     description = db.Column(db.String, nullable=True)
+    # photo = db.Column(db.String, nullable=True)
 

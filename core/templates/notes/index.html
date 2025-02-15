@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/notes-style.css') }}">
 {% endblock %}
 {% block content %}
+<form method="POST" action="{{ url_for('notes.save_note') }}" enctype="multipart/form-data">
     <div class="note-container">
-        <input type="text" class="note-title" placeholder="Название заметки">
-        <textarea class="note-description" placeholder="Детальное описание..."></textarea>
-        <input type="file" id="photo-upload" multiple accept="image/*" style="display: none;">
-        <button class="add-photo-btn" onclick="document.getElementById('photo-upload').click()">📷 Добавить фото</button>
+        <input type="text" name="note_title" class="note-title" placeholder="Название заметки">
+        <textarea name="note_description" class="note-description" placeholder="Детальное описание..."></textarea>
+
+        <input type="file" name="photos" id="photo-upload" multiple accept="image/*" style="display: none;">
+        <button type="button" class="add-photo-btn" onclick="document.getElementById('photo-upload').click()">📷 Добавить фото</button>
+
         <div class="photos-container" id="photos-container"></div>
+        <button type="submit" class="save-btn">Сохранить</button>
     </div>
-    {% block script %}
-        <script src="{{ url_for('static', filename='scripts/notes-style.js') }}"></script>
-    {% endblock %}
+</form>
+{% block script %}
+    <script src="{{ url_for('static', filename='scripts/notes-style.js') }}"></script>
+{% endblock %}
 {% endblock %}

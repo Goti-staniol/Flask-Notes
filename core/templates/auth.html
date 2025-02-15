@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация и Вход</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/auth.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="tab-menu">
+      <button id="loginTab" class="active">Вход</button>
+      <button id="registerTab">Регистрация</button>
+    </div>
+    <div class="form-container">
+      <form id="loginForm" class="active" method="POST" action="">
+        {{ login_form.hidden_tag() }}
+        <h2>Вход</h2>
+        {{ login_form.username(placeholder="Username") }}
+        {{ login_form.password(placeholder="Пароль") }}
+        {{ login_form.submit() }}
+      </form>
+      <form id="registerForm" method="POST" action="">
+        {{ register_form.hidden_tag() }}
+        <h2>Регистрация</h2>
+        {{ register_form.username(placeholder="username") }}
+        {{ register_form.email(placeholder="Email") }}
+        {{ register_form.password(placeholder="Пароль") }}
+        {{ register_form.submit() }}
+      </form>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='scripts/auth-style.js') }}"></script>
+</body>
