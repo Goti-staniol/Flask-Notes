@@ -2,7 +2,7 @@
 
 {% block title %}Add Note{% endblock %}
 {% block style_link %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/notes-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/notes-form.css') }}">
 {% endblock %}
 {% block content %}
 <form method="POST" action="{{ url_for('notes.save_note') }}" enctype="multipart/form-data">
@@ -18,6 +18,6 @@
     </div>
 </form>
 {% block script %}
-    <script src="{{ url_for('static', filename='scripts/notes-style.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/notes-form-style.js') }}"></script>
 {% endblock %}
 {% endblock %}
